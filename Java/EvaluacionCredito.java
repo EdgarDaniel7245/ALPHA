@@ -4,7 +4,6 @@ public class EvaluacionCredito {
     public static void main(String[] args) {
 
         double salarioMensual;
-        int tieneDeudas; // 1 para Si, 0 para No, o validamos por String como tu ejemplo
         String historialCrediticio;
         String estadoSolicitud;
 

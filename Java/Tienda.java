@@ -13,7 +13,6 @@ public class Tienda {
         String listaMed = "";
         String listaGrande = "";
         double ventaMasAlta = 0;
-        int repeticionesMasAlta = 0;
         double promedio = 0;
 
         while (true) {
@@ -55,9 +54,7 @@ public class Tienda {
                 }
                 if (importe > ventaMasAlta) {
                     ventaMasAlta = importe;
-                    repeticionesMasAlta = 1;
                 } else if (importe == ventaMasAlta) {
-                    repeticionesMasAlta++;
                 }
             }
         }
