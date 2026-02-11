@@ -1,0 +1,98 @@
+Realizar seudocódigo y codificación:
+Debe determinar si un candidato es apto para un empleo debe tener una edad entre 25 a 40 años, 3 años de experiencia mínimo, si tiene titulo universitario se acepta con 2 años de experiencia, si tiene certificaciones y su edad es igual o menor de 35 años se le otorgara su preferencia, en cualquier otro caso se le rechazara.
+Las salidas del programa deben ser: La edad, la experiencia, si tiene o no titulo universitario al igual que certificaciones y si fue aceptado o rechazado.
+--------------------------------------------------------------------------------------------------
+import javax.swing.JOptionPane;
+
+public class AptitudEmpleo {
+    public static void main(String[] args) {
+        
+        int edad, experiencia;
+        String tieneTitulo, tieneCertificaciones;
+        String estado;
+
+        String inputEdad = JOptionPane.showInputDialog("Ingrese la edad del candidato:");
+        edad = Integer.parseInt(inputEdad);
+        String inputExp = JOptionPane.showInputDialog("Ingrese los años de experiencia:");
+        experiencia = Integer.parseInt(inputExp);
+
+        tieneTitulo = JOptionPane.showInputDialog("¿Tiene Título Universitario? (Si/No)");
+        tieneCertificaciones = JOptionPane.showInputDialog("¿Tiene Certificaciones? (Si/No)");
+
+
+        if (edad >= 25 && edad <= 40) {
+
+            if (experiencia >= 3 || (tieneTitulo.equalsIgnoreCase("Si") && experiencia == 2)) {
+
+                estado = "Aceptado";
+
+
+                if (tieneCertificaciones.equalsIgnoreCase("Si") && edad <= 35) {
+                    estado = "Aceptado con Preferencia";
+                }
+
+            } else {
+
+                estado = "Rechazado";
+            }
+
+        } else {
+
+            estado = "Rechazado";
+        }
+
+        String mensajeSalida = "--- Resultados de la Postulación ---\n" +
+                "Edad: " + edad + " años\n" +
+                "Experiencia: " + experiencia + " años\n" +
+                "Tiene Título: " + tieneTitulo + "\n" +
+                "Tiene Certificaciones: " + tieneCertificaciones + "\n\n" +
+                "Estado: " + estado;
+
+        JOptionPane.showMessageDialog(null, mensajeSalida);
+
+    }
+}
+
+------------------------------------------------------------------------------------
+
+Algoritmo AptitudEmpleo
+    Definir edad, experiencia Como Entero
+    Definir tieneTitulo, tieneCertificaciones, estado Como Caracter
+    
+    estado <- "Rechazado"
+    
+    Escribir "Ingrese la edad del candidato:"
+    Leer edad
+    Escribir "Ingrese los años de experiencia:"
+    Leer experiencia
+    Escribir "¿Tiene Título Universitario? (Si/No)"
+    Leer tieneTitulo
+    Escribir "¿Tiene Certificaciones? (Si/No)"
+    Leer tieneCertificaciones
+    
+    Si (edad >= 25 Y edad <= 40) Entonces
+        
+        Si (experiencia >= 3) O (Mayusculas(tieneTitulo) = "SI" Y experiencia >= 2) Entonces
+            estado <- "Aceptado"
+            
+            Si (Mayusculas(tieneCertificaciones) = "SI" Y edad <= 35) Entonces
+                estado <- "Aceptado con Preferencia"
+            FinSi
+            
+        SiNo
+
+            estado <- "Rechazado"
+        FinSi
+        
+    SiNo
+        estado <- "Rechazado"
+    FinSi
+
+    Escribir "--- Resultados de la Postulación ---"
+    Escribir "Edad: ", edad, " años"
+    Escribir "Experiencia: ", experiencia, " años"
+    Escribir "Tiene Título: ", tieneTitulo
+    Escribir "Tiene Certificaciones: ", tieneCertificaciones
+    Escribir " "
+    Escribir "Estado: ", estado
+FinAlgoritmo

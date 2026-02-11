@@ -1,0 +1,57 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+6
+3
+1
+r
+3
+0.0
+1
+n
+3
+0.0
+6
+grados
+5
+360.0
+6
+2
+2
+pi
+6
+3.1416
+4
+area
+3
+0.0
+4
+1
+20
+'Introduce el radio'
+5
+1
+1
+r
+4
+1
+21
+'Introduce el angulo'
+5
+1
+1
+n
+6
+1
+4
+area
+15
+pi*r^2*n/grados
+4
+1
+39
+'El area del sector circular es: ' area
+1
